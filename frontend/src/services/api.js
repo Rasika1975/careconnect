@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Base URL for the backend API
-const API_BASE_URL = 'http://localhost:5000';
+const API_BASE_URL = 'https://careconnect-backend-ejb1.onrender.com';
 
 // Create an axios instance with base configuration
 const api = axios.create({
