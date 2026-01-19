@@ -98,9 +98,9 @@ const PatientForm = ({ onFormSubmit }) => {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4 bg-white rounded-lg shadow-md">
-      <h2 className="text-xl font-bold text-blue-800 mb-1">Request Healthcare Support</h2>
-      <p className="text-sm text-gray-600 mb-4">No registration required - get immediate AI analysis</p>
+    <div className="w-full max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
+      <h2 className="text-xl font-bold text-blue-800 mb-2 text-center">Request Healthcare Support</h2>
+      <p className="text-sm text-gray-600 mb-6 text-center">No registration required - get immediate AI analysis</p>
       
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
@@ -198,7 +198,7 @@ const PatientForm = ({ onFormSubmit }) => {
       </form>
       
       {error && (
-        <div className="mt-3 p-2 bg-red-100 text-red-700 rounded-md text-sm">
+        <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-md text-sm">
           {error}
         </div>
       )}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const VolunteerLogin = ({ onLogin }) => {
+const VolunteerLogin = ({ onLogin, onSwitchToRegister }) => {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -110,7 +110,7 @@ const VolunteerLogin = ({ onLogin }) => {
         <p className="text-xs text-gray-600">
           Don't have an account?{' '}
           <button 
-            onClick={() => navigate('/volunteer')}
+            onClick={onSwitchToRegister}
             className="text-green-600 hover:text-green-800 font-medium"
           >
             Register here

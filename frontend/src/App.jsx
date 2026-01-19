@@ -5,7 +5,6 @@ import Footer from './components/common/Footer';
 import Home from './pages/Home';
 import Support from './pages/Support';
 import Volunteer from './pages/Volunteer';
-import VolunteerLoginPage from './pages/VolunteerLogin';
 import VolunteerDashboardPage from './pages/VolunteerDashboard';
 import Admin from './pages/Admin';
 import './App.css';
@@ -28,8 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/support" element={<Support />} />
-          <Route path="/volunteer" element={<Volunteer />} />
-          <Route path="/volunteer-login" element={<VolunteerLoginPage onLogin={handleVolunteerLogin} />} />
+          <Route path="/volunteer" element={<Volunteer onLogin={handleVolunteerLogin} />} />
           <Route path="/volunteer-dashboard" element={<VolunteerDashboardPage volunteerData={volunteerData} />} />
           <Route path="/admin" element={<Admin />} />
         </Routes>

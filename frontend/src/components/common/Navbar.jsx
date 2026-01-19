@@ -42,14 +42,9 @@ const Navbar = ({ volunteerData, onLogout }) => {
               </button>
             </>
           ) : (
-            <>
-              <Link to="/volunteer" className="text-sm text-gray-700 hover:text-blue-600 transition-colors">
-                Volunteer
-              </Link>
-              <Link to="/volunteer-login" className="text-sm text-gray-700 hover:text-blue-600 transition-colors">
-                Volunteer Login
-              </Link>
-            </>
+            <Link to="/volunteer" className="text-sm text-gray-700 hover:text-blue-600 transition-colors">
+              Volunteer
+            </Link>
           )}
           
           <Link to="/admin" className="text-sm text-gray-700 hover:text-blue-600 transition-colors">
@@ -120,22 +115,13 @@ const Navbar = ({ volunteerData, onLogout }) => {
                 </button>
               </>
             ) : (
-              <>
-                <Link
-                  to="/volunteer"
-                  className="text-sm text-gray-700 hover:text-blue-600 transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Volunteer
-                </Link>
-                <Link
-                  to="/volunteer-login"
-                  className="text-sm text-gray-700 hover:text-blue-600 transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Volunteer Login
-                </Link>
-              </>
+              <Link
+                to="/volunteer"
+                className="text-sm text-gray-700 hover:text-blue-600 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Volunteer
+              </Link>
             )}
             
             <Link
