@@ -23,7 +23,8 @@ app.use(cors({
     'http://localhost:3000',
     'http://localhost:3001',
     'http://localhost:8080',
-    'http://localhost:8000'
+    'http://localhost:8000',
+    'https://careconnect-qp0u.onrender.com'
   ],
   credentials: true
 }));
