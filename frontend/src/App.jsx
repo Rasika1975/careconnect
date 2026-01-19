@@ -8,6 +8,7 @@ import Support from './pages/Support';
 import Volunteer from './pages/Volunteer';
 import VolunteerDashboardPage from './pages/VolunteerDashboard';
 import FAQPage from './pages/FAQ';
+import AIChatPage from './pages/AIChat';
 import Admin from './pages/Admin';
 import './App.css';
 
@@ -32,6 +33,7 @@ function App() {
           <Route path="/volunteer" element={<Volunteer onLogin={handleVolunteerLogin} />} />
           <Route path="/volunteer-dashboard" element={<VolunteerDashboardPage volunteerData={volunteerData} />} />
           <Route path="/faq" element={<FAQPage />} />
+          <Route path="/ai-chat" element={<AIChatPage />} />
           <Route path="/admin" element={<Admin />} />
         </Routes>
         <AIChatbot />

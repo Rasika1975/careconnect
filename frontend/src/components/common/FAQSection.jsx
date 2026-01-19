@@ -43,11 +43,11 @@ const FAQSection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-gray-50 py-6">
       <div className="w-full px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-3xl font-bold text-blue-900 mb-4">Frequently Asked Questions</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <div className="text-center mb-8">
+          <h1 className="text-2xl font-bold text-blue-900 mb-2">Frequently Asked Questions</h1>
+          <p className="text-sm text-gray-600 max-w-xl mx-auto">
             Find answers to common questions about CareConnect's services and how we can help you
           </p>
         </div>

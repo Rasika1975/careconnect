@@ -47,6 +47,9 @@ const Navbar = ({ volunteerData, onLogout }) => {
             </Link>
           )}
           
+          <Link to="/ai-chat" className="text-sm text-gray-700 hover:text-blue-600 transition-colors">
+            AI Chat
+          </Link>
           <Link to="/faq" className="text-sm text-gray-700 hover:text-blue-600 transition-colors">
             FAQ
           </Link>
@@ -127,6 +130,13 @@ const Navbar = ({ volunteerData, onLogout }) => {
               </Link>
             )}
             
+            <Link
+              to="/ai-chat"
+              className="text-sm text-gray-700 hover:text-blue-600 transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              AI Chat
+            </Link>
             <Link
               to="/faq"
               className="text-sm text-gray-700 hover:text-blue-600 transition-colors"
