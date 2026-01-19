@@ -4,10 +4,18 @@ import PatientForm, { AIResponseDisplay } from '../components/patient/PatientFor
 const Support = () => {
   const [aiResponse, setAiResponse] = useState(null);
   const [issueType, setIssueType] = useState('');
+  const [formSubmitted, setFormSubmitted] = useState(false);
   
   const handleFormSubmit = (response, formIssueType) => {
     setAiResponse(response);
     setIssueType(formIssueType);
+    setFormSubmitted(true);
+  };
+  
+  const handleResetForm = () => {
+    setAiResponse(null);
+    setIssueType('');
+    setFormSubmitted(false);
   };
   
   return (
@@ -21,8 +29,15 @@ const Support = () => {
         </div>
         
         <div className="flex flex-col gap-4">
-          <PatientForm onFormSubmit={handleFormSubmit} />
-          <AIResponseDisplay aiResponse={aiResponse} issueType={issueType} />
+          {formSubmitted ? (
+            <AIResponseDisplay 
+              aiResponse={aiResponse} 
+              issueType={issueType} 
+              onReset={handleResetForm}
+            />
+          ) : (
+            <PatientForm onFormSubmit={handleFormSubmit} />
+          )}
         </div>
       </div>
     </div>

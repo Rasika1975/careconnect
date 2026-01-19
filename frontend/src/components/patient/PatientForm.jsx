@@ -207,7 +207,7 @@ const PatientForm = ({ onFormSubmit }) => {
 };
 
 // Separate component for AI Response display
-export const AIResponseDisplay = ({ aiResponse, issueType }) => {
+export const AIResponseDisplay = ({ aiResponse, issueType, onReset }) => {
   if (!aiResponse) return null;
   
   return (
@@ -238,6 +238,17 @@ export const AIResponseDisplay = ({ aiResponse, issueType }) => {
         message={aiResponse.message || 'Thank you for your submission.'} 
         issueType={issueType}
       />
+      
+      {onReset && (
+        <div className="mt-6 text-center">
+          <button
+            onClick={onReset}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md text-sm font-medium transition-colors"
+          >
+            Submit Another Request
+          </button>
+        </div>
+      )}
     </div>
   );
 };
