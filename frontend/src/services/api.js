@@ -11,10 +11,17 @@ const api = axios.create({
 // Function to submit patient data
 export const submitPatient = async (data) => {
   try {
+    console.log('Sending patient data to backend:', data);
     const response = await api.post('/api/patient', data);
+    console.log('Received response from backend:', response);
     return response;
   } catch (error) {
     console.error('Error submitting patient data:', error);
+    console.error('Error details:', {
+      message: error.message,
+      response: error.response,
+      request: error.request
+    });
     throw error;
   }
 };

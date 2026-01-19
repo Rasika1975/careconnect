@@ -5,26 +5,25 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50">
       {/* Hero Section */}
-      <section className="py-20 px-6">
-        <div className="container mx-auto max-w-6xl text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-blue-900 mb-6">
+      <section className="py-12 px-4">
+        <div className="w-full text-center">
+          <h1 className="text-3xl font-bold text-blue-900 mb-3">
             CareConnect
           </h1>
-          <p className="text-xl text-gray-700 mb-10 max-w-3xl mx-auto">
-            Connecting patients with healthcare support through AI-powered assistance. 
-            A platform designed for NGOs and healthcare support organizations.
+          <p className="text-sm text-gray-700 mb-6 max-w-2xl mx-auto">
+            AI-powered healthcare support for NGOs and organizations
           </p>
           
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-3">
             <Link 
               to="/support" 
-              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105"
+              className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold py-2 px-6 rounded-md transition duration-300"
             >
               Request Support
             </Link>
             <Link 
               to="/volunteer" 
-              className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105"
+              className="bg-green-600 hover:bg-green-700 text-white text-sm font-bold py-2 px-6 rounded-md transition duration-300"
             >
               Volunteer Now
             </Link>
@@ -33,37 +32,37 @@ const Home = () => {
       </section>
 
       {/* AI Assistance Section */}
-      <section className="py-16 px-6 bg-white">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-blue-900 mb-4">AI-Assisted Healthcare Support</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Our AI analyzes health concerns and provides immediate insights to help prioritize care and connect patients with appropriate resources.
+      <section className="py-8 px-4 bg-white">
+        <div className="w-full">
+          <div className="text-center mb-8">
+            <h2 className="text-xl font-bold text-blue-900 mb-2">AI Healthcare Support</h2>
+            <p className="text-xs text-gray-600 max-w-xl mx-auto">
+              AI analyzes health concerns and provides immediate insights
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-blue-50 p-6 rounded-lg text-center">
-              <div className="text-4xl mb-4">🔍</div>
-              <h3 className="text-xl font-semibold text-blue-800 mb-2">Smart Analysis</h3>
-              <p className="text-gray-600">
-                AI evaluates health concerns to determine urgency and recommend next steps.
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="bg-blue-50 p-4 rounded-lg text-center">
+              <div className="text-2xl mb-2">🔍</div>
+              <h3 className="text-sm font-semibold text-blue-800 mb-1">Smart Analysis</h3>
+              <p className="text-xs text-gray-600">
+                AI determines urgency and recommends next steps
               </p>
             </div>
             
-            <div className="bg-green-50 p-6 rounded-lg text-center">
-              <div className="text-4xl mb-4">⚡</div>
-              <h3 className="text-xl font-semibold text-green-800 mb-2">Quick Response</h3>
-              <p className="text-gray-600">
-                Receive immediate feedback and guidance while our team prepares to assist.
+            <div className="bg-green-50 p-4 rounded-lg text-center">
+              <div className="text-2xl mb-2">⚡</div>
+              <h3 className="text-sm font-semibold text-green-800 mb-1">Quick Response</h3>
+              <p className="text-xs text-gray-600">
+                Immediate feedback and guidance provided
               </p>
             </div>
             
-            <div className="bg-purple-50 p-6 rounded-lg text-center">
-              <div className="text-4xl mb-4">🤝</div>
-              <h3 className="text-xl font-semibold text-purple-800 mb-2">Community Support</h3>
-              <p className="text-gray-600">
-                Connect with volunteers and healthcare professionals ready to help.
+            <div className="bg-purple-50 p-4 rounded-lg text-center">
+              <div className="text-2xl mb-2">🤝</div>
+              <h3 className="text-sm font-semibold text-purple-800 mb-1">Community Support</h3>
+              <p className="text-xs text-gray-600">
+                Connect with healthcare professionals
               </p>
             </div>
           </div>
@@ -71,54 +70,51 @@ const Home = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-16 px-6">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-blue-900 mb-4">How CareConnect Works</h2>
+      <section className="py-8 px-4">
+        <div className="w-full">
+          <div className="text-center mb-8">
+            <h2 className="text-xl font-bold text-blue-900 mb-2">How CareConnect Works</h2>
           </div>
           
-          <div className="space-y-12">
-            <div className="flex flex-col md:flex-row items-center gap-8">
+          <div className="space-y-6">
+            <div className="flex flex-col md:flex-row items-center gap-4">
               <div className="md:w-1/3 text-center">
-                <div className="bg-blue-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">1</span>
+                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <span className="text-xl">1</span>
                 </div>
               </div>
               <div className="md:w-2/3">
-                <h3 className="text-2xl font-semibold text-blue-800 mb-2">Request Support</h3>
-                <p className="text-gray-600">
-                  Patients fill out a simple form describing their health concerns. 
-                  Our AI analyzes the information to provide initial insights.
+                <h3 className="text-base font-semibold text-blue-800 mb-1">Request Support</h3>
+                <p className="text-xs text-gray-600">
+                  Fill out form describing health concerns. AI provides initial insights.
                 </p>
               </div>
             </div>
             
-            <div className="flex flex-col md:flex-row-reverse items-center gap-8">
+            <div className="flex flex-col md:flex-row-reverse items-center gap-4">
               <div className="md:w-1/3 text-center">
-                <div className="bg-green-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">2</span>
+                <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <span className="text-xl">2</span>
                 </div>
               </div>
               <div className="md:w-2/3">
-                <h3 className="text-2xl font-semibold text-green-800 mb-2">AI Analysis</h3>
-                <p className="text-gray-600">
-                  Our AI evaluates the concern and categorizes it by priority level, 
-                  helping healthcare providers respond appropriately.
+                <h3 className="text-base font-semibold text-green-800 mb-1">AI Analysis</h3>
+                <p className="text-xs text-gray-600">
+                  AI evaluates concern and categorizes by priority level.
                 </p>
               </div>
             </div>
             
-            <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="flex flex-col md:flex-row items-center gap-4">
               <div className="md:w-1/3 text-center">
-                <div className="bg-purple-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">3</span>
+                <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <span className="text-xl">3</span>
                 </div>
               </div>
               <div className="md:w-2/3">
-                <h3 className="text-2xl font-semibold text-purple-800 mb-2">Receive Help</h3>
-                <p className="text-gray-600">
-                  Volunteers and healthcare professionals receive notifications 
-                  and coordinate to provide the necessary support.
+                <h3 className="text-base font-semibold text-purple-800 mb-1">Receive Help</h3>
+                <p className="text-xs text-gray-600">
+                  Healthcare professionals coordinate to provide support.
                 </p>
               </div>
             </div>

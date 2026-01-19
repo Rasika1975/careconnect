@@ -27,6 +27,11 @@ const patientSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  issueType: {
+    type: String,
+    required: true,
+    enum: ['medical-help', 'medicine-support', 'mental-health', 'emergency-guidance']
+  },
   aiCategory: {
     type: String,
     default: 'General'

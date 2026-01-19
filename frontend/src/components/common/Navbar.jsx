@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ volunteerData, onLogout }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -9,28 +9,50 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-white shadow-md py-4 px-6">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="sticky top-0 z-50 bg-white shadow-md py-2 px-4">
+      <div className="w-full flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <div className="bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center">
-            <span className="text-white font-bold text-xl">C</span>
+          <div className="bg-blue-600 w-8 h-8 rounded-full flex items-center justify-center">
+            <span className="text-white font-bold text-sm">C</span>
           </div>
-          <Link to="/" className="text-2xl font-bold text-blue-800">CareConnect</Link>
+          <Link to="/" className="text-lg font-bold text-blue-800">CareConnect</Link>
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8">
-          <Link to="/" className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
+        <div className="hidden md:flex space-x-6 items-center">
+          <Link to="/" className="text-sm text-gray-700 hover:text-blue-600 transition-colors">
             Home
           </Link>
-          <Link to="/support" className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
+          <Link to="/support" className="text-sm text-gray-700 hover:text-blue-600 transition-colors">
             Support
           </Link>
-          <Link to="/volunteer" className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
-            Volunteer
-          </Link>
-          <Link to="/admin" className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium">
+          
+          {/* Volunteer Links - Conditional */}
+          {volunteerData ? (
+            <>
+              <Link to="/volunteer-dashboard" className="text-sm text-gray-700 hover:text-blue-600 transition-colors">
+                Dashboard
+              </Link>
+              <button 
+                onClick={onLogout}
+                className="text-sm text-gray-700 hover:text-blue-600 transition-colors"
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to="/volunteer" className="text-sm text-gray-700 hover:text-blue-600 transition-colors">
+                Volunteer
+              </Link>
+              <Link to="/volunteer-login" className="text-sm text-gray-700 hover:text-blue-600 transition-colors">
+                Volunteer Login
+              </Link>
+            </>
+          )}
+          
+          <Link to="/admin" className="text-sm text-gray-700 hover:text-blue-600 transition-colors">
             Admin
           </Link>
         </div>
@@ -60,32 +82,65 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden mt-4 py-4 border-t">
-          <div className="flex flex-col space-y-4 px-4">
+        <div className="md:hidden mt-2 py-2 border-t">
+          <div className="flex flex-col space-y-2 px-4">
             <Link
               to="/"
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium"
+              className="text-sm text-gray-700 hover:text-blue-600 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Home
             </Link>
             <Link
               to="/support"
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium"
+              className="text-sm text-gray-700 hover:text-blue-600 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Support
             </Link>
-            <Link
-              to="/volunteer"
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium"
-              onClick={() => setIsOpen(false)}
-            >
-              Volunteer
-            </Link>
+            
+            {/* Volunteer Links - Conditional */}
+            {volunteerData ? (
+              <>
+                <Link
+                  to="/volunteer-dashboard"
+                  className="text-sm text-gray-700 hover:text-blue-600 transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Dashboard
+                </Link>
+                <button
+                  onClick={() => {
+                    onLogout();
+                    setIsOpen(false);
+                  }}
+                  className="text-left text-sm text-gray-700 hover:text-blue-600 transition-colors"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link
+                  to="/volunteer"
+                  className="text-sm text-gray-700 hover:text-blue-600 transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Volunteer
+                </Link>
+                <Link
+                  to="/volunteer-login"
+                  className="text-sm text-gray-700 hover:text-blue-600 transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Volunteer Login
+                </Link>
+              </>
+            )}
+            
             <Link
               to="/admin"
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-300 font-medium"
+              className="text-sm text-gray-700 hover:text-blue-600 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Admin

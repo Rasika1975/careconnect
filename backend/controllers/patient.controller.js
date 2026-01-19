@@ -7,21 +7,21 @@ const createPatient = async (req, res) => {
     console.log('Received patient request:', req.body);
     
     // 1. Receive patient form data
-    const { name, age, contact, concern } = req.body;
+    const { name, age, contact, issueType, concern } = req.body;
     
     // Validate required fields
-    if (!name || !age || !contact || !concern) {
-      console.log('Patient validation failed:', { name, age, contact, concern });
+    if (!name || !age || !contact || !issueType || !concern) {
+      console.log('Patient validation failed:', { name, age, contact, issueType, concern });
       return res.status(400).json({
         success: false,
         message: 'All fields are required',
-        receivedData: { name, age, contact, concern }
+        receivedData: { name, age, contact, issueType, concern }
       });
     }
     
-    // 2. Pass concern text to concernAnalyzer
-    console.log('Analyzing concern:', concern);
-    const aiAnalysis = concernAnalyzer(concern);
+    // 2. Pass concern text and issue type to concernAnalyzer
+    console.log('Analyzing concern:', concern, 'Issue type:', issueType);
+    const aiAnalysis = concernAnalyzer(concern, issueType);
     console.log('AI Analysis result:', aiAnalysis);
     
     // 3. Save patient data + AI result in DB
@@ -29,6 +29,7 @@ const createPatient = async (req, res) => {
       name,
       age,
       contact,
+      issueType,
       concern,
       aiCategory: aiAnalysis.category,
       priority: aiAnalysis.priority
