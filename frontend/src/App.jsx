@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
+import AIChatbot from './components/common/AIChatbot';
 import Home from './pages/Home';
 import Support from './pages/Support';
 import Volunteer from './pages/Volunteer';
 import VolunteerDashboardPage from './pages/VolunteerDashboard';
+import FAQPage from './pages/FAQ';
 import Admin from './pages/Admin';
 import './App.css';
 
@@ -29,8 +31,10 @@ function App() {
           <Route path="/support" element={<Support />} />
           <Route path="/volunteer" element={<Volunteer onLogin={handleVolunteerLogin} />} />
           <Route path="/volunteer-dashboard" element={<VolunteerDashboardPage volunteerData={volunteerData} />} />
+          <Route path="/faq" element={<FAQPage />} />
           <Route path="/admin" element={<Admin />} />
         </Routes>
+        <AIChatbot />
       </main>
       <Footer />
     </div>

@@ -47,6 +47,9 @@ const Navbar = ({ volunteerData, onLogout }) => {
             </Link>
           )}
           
+          <Link to="/faq" className="text-sm text-gray-700 hover:text-blue-600 transition-colors">
+            FAQ
+          </Link>
           <Link to="/admin" className="text-sm text-gray-700 hover:text-blue-600 transition-colors">
             Admin
           </Link>
@@ -124,6 +127,13 @@ const Navbar = ({ volunteerData, onLogout }) => {
               </Link>
             )}
             
+            <Link
+              to="/faq"
+              className="text-sm text-gray-700 hover:text-blue-600 transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              FAQ
+            </Link>
             <Link
               to="/admin"
               className="text-sm text-gray-700 hover:text-blue-600 transition-colors"
